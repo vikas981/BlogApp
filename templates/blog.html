@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col s12, m8, l8">
+        <h2>{{blog.blog_title}}</h2>
+        <p style="font-size:70%">Published : <strong>{{blog.blog_published}}</strong></p>
+        {{blog.blog_content|safe}}
+    </div>
+    <div class="col s12 m4 l4">
+        <ul class="collapsible popout">
+            {% for blogs in sidebar %}
+            {% if forloop.counter0 == blog_index %}
+            <li class="active">
+                <div class="collapsible-header">{{blogs.blog_title}}<br>currently viewing</div>
+            </li>
+            {% else %}
+            <li>
+                <div class="collapsible-header">{{blogs.blog_title}}</div>
+                <div class="collapsible-body">
+                    <p><a href="/{{blogs.blog_slug}}">
+                        <button class="btn waves-effect waves-light right-align" style="
+                  background-color:blue;color:white">GO
+                        </button>
+                    </a></p>
+                </div>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+
+{% endblock %}
