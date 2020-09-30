@@ -10,6 +10,7 @@ class BlogAdmin(admin.ModelAdmin):
         'blog_content',
         'blog_published',
         'blog_slug',
+        'blog_tags',
         'blog_series'
     ]
 

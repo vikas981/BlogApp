@@ -1,13 +1,32 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from rest_framework import viewsets
+
 from blogapp.models import Blog, BlogCategory, BlogSeries
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from .forms import NewUserForm
+from blogapp.serializers import BlogCategorySerializer,BlogSeriesSerializer,BlogSerializer
 
 
 # Create your views here.
+
+
+class blogcategoryapi(viewsets.ModelViewSet):
+    queryset = BlogCategory.objects.all()
+    serializer_class = BlogCategorySerializer
+
+
+class blogsriesapi(viewsets.ModelViewSet):
+    queryset = BlogSeries.objects.all()
+    serializer_class = BlogSeriesSerializer
+
+
+class blogapi(viewsets.ModelViewSet):
+    queryset = Blog.objects.all()
+    serializer_class = BlogSerializer
+
 
 def homepage(request):
     categories = BlogCategory.objects.all()

@@ -4,16 +4,39 @@
 <div class="row">
     <div class="col s12, m8, l8">
         <h2>{{blog.blog_title}}</h2>
-        <p style="font-size:70%">Published : <strong>{{blog.blog_published}}</strong></p>
+
+         <p style="font-size:70%">Last Updated By : <strong>{{user}}</strong></p>
+         <p style="font-size:70%">Last Updated On : <strong>{{blog.blog_published}}</strong></p>
         {{blog.blog_content|safe}}
+        <br>
+        <div>
+            <h3>Tags</h3>
+            <p>{{blog.blog_tags}}</p>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+                Facebook</a>
+
+            <a href="https://twitter.com/home?status=I'm%20going%20to%20learn%20to%20Code...%20Come%20build%20an%20web%20apsp%20with%20me!%20%23CFE%20and%20@justinmitchel%20{{ request.build_absolute_uri }}">
+                Twitter
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://swiftforentrepreneurs.com/&title=Be%20first%20%7C%20Join%20Swift%20for%20Entrepreneurs&summary=Swift%20for%20Entrepreneurs%20is%20a%20project-based%20programming%20course%20for%20non-technical%20founders.%20We'll%20learn%20how%20to%20build%20iOS%20apps%20from%20scratch%20using%20Apple's%20new%20programming%20language:%20Swift.%20Be%20first%20and%20learn%20with%20me!&source={{ request.build_absolute_uri }}">
+                Linkedin
+            </a>
+        </div>
+         <br>
+        <div class="fb-comments"
+             data-href="{{ request.build_absolute_uri }}"
+             data-numposts="5" data-width=""></div>
     </div>
+
     <div class="col s12 m4 l4">
         <ul class="collapsible popout">
             {% for blogs in sidebar %}
             {% if forloop.counter0 == blog_index %}
-            <li class="active">
-                <div class="collapsible-header">{{blogs.blog_title}}<br>currently viewing</div>
+            <li class="active" style="color:green;">
+                <div class="collapsible-header">{{blogs.blog_title}}
+                   </div>
             </li>
+
             {% else %}
             <li>
                 <div class="collapsible-header">{{blogs.blog_title}}</div>
@@ -29,6 +52,7 @@
             {% endfor %}
         </ul>
     </div>
+    <br>
 
 </div>
 
