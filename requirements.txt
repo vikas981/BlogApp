@@ -1,0 +1,16 @@
+Django==3.1.1
+django-tinymce==3.0.2
+django-tinymce4-lite==1.8.0
+djangorestframework==3.11.1
+gunicorn==20.0.4
+Jinja2==2.11.2
+Pillow==5.1.0
+pipenv==2020.8.13
+requests==2.18.4
+Werkzeug==1.0.1
+whitenoise==5.2.0
+psycopg2==2.8.6
+whitenoise==5.2.0
+
+
+
