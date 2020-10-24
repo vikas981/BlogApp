@@ -6,6 +6,7 @@ from tinymce.widgets import TinyMCE
 
 class BlogAdmin(admin.ModelAdmin):
     fields = [
+        'user_name',
         'blog_title',
         'blog_content',
         'blog_published',
