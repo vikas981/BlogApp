@@ -30,7 +30,6 @@ class blogapi(viewsets.ModelViewSet):
 
 def homepage(request):
     categories = BlogCategory.objects.all()
-
     return render(request, 'categories.html', {'categories': categories})
 
 
