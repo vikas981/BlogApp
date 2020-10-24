@@ -1,5 +1,6 @@
+
 .bg-primary{
-    background: linear-gradient(to right ,#fc00ff , #00dbde  )!important;
+    background: linear-gradient(to right ,#c139c3 , #00dbde  )!important;
     /* background: linear-gradient(to right ,#00b09b , #96c93d  ) */
 }
 
@@ -306,4 +307,14 @@ div.material-table table td:last-child {
   border-radius: 25px;
   box-shadow: inset 8px 8px 8px #cbced1,
               inset -8px -8px 8px #ffffff;
+}
+
+.footer-one {
+  background: linear-gradient(to right ,#c139c3 , #00dbde  )!important;
+
+}
+
+.footer-two {
+  background: linear-gradient(to right ,#c139c3 , #00dbde  )!important;
+
 }
