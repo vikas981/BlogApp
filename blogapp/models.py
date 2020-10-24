@@ -8,7 +8,7 @@ from django.db.models.signals import pre_save
 
 class BlogCategory(models.Model):
     blog_category = models.CharField(max_length=80)
-    blog_summary = models.CharField(max_length=100)
+    blog_summary = models.TextField()
     category_slug = models.CharField(max_length=100)
 
     class Meta:
@@ -19,10 +19,9 @@ class BlogCategory(models.Model):
 
 
 class BlogSeries(models.Model):
-
     blog_series = models.CharField(max_length=100)
     blog_category = models.ForeignKey(BlogCategory, default=1, verbose_name='Category', on_delete=models.SET_DEFAULT)
-    series_summary = models.CharField(max_length=250)
+    series_summary = models.TextField()
 
     class Meta:
         verbose_name_plural = "Series"
@@ -32,7 +31,7 @@ class BlogSeries(models.Model):
 
 
 class Blog(models.Model):
-
+    user_name = models.CharField(max_length=30,default="Vikash Singh")
     blog_title = models.CharField(max_length=100)
     blog_content = models.TextField()
     blog_published = models.DateField("date post", default=django.utils.timezone.now)
